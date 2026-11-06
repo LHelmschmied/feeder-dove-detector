@@ -218,3 +218,10 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Project data and models
+data/raw_clips/
+data/frames/
+data/crops/
+*.pt
+*.mp4
