@@ -34,6 +34,8 @@ end_t = parts[4] + parts[5] + parts[6]
 df["date"] = pd.to_datetime(parts[0]).dt.date
 df["start"] = pd.to_datetime(parts[0] + " " + start_t, format="%Y-%m-%d %H%M%S")
 df["end"] = pd.to_datetime(parts[0] + " " + end_t, format="%Y-%m-%d %H%M%S")
+df["clip_id"] = df["start"].dt.strftime("%Y%m%d_%H%M%S")
+assert df["clip_id"].is_unique, "Two clips share a start time"
 df["duration_s"] = (df["end"] - df["start"]).dt.total_seconds()
 df["hour"] = df["start"].dt.hour
 
