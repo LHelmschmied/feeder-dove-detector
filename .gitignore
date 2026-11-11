@@ -225,3 +225,6 @@ data/frames/
 data/crops/
 *.pt
 *.mp4
+
+# Throwaway test code
+scratch/
